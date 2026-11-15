@@ -4,30 +4,30 @@
 class Lancher < Formula
   desc "A minimal local project template manager"
   homepage "https://lancher.dev"
-  version "0.3.0"
+  version "0.3.1"
   license "MIT"
 
   on_macos do
     on_intel do
-      url "https://github.com/lancher-dev/lancher/releases/download/v0.3.0/lancher-darwin-amd64"
-      sha256 "005d8d8383e2cdda49a5328abd003a3e3c64a49d80ddb13cb4501c508145420e"
+      url "https://github.com/lancher-dev/lancher/releases/download/v0.3.1/lancher-darwin-amd64"
+      sha256 "78f7e3d9379477316906b80ce53e5d5170f900f1b9afd1e2c124589b904b2c40"
     end
 
     on_arm do
-      url "https://github.com/lancher-dev/lancher/releases/download/v0.3.0/lancher-darwin-arm64"
-      sha256 "ea3f8fb9c9eba7af98034f9aa29728f0b83268eb485760a6d2668915c80855a8"
+      url "https://github.com/lancher-dev/lancher/releases/download/v0.3.1/lancher-darwin-arm64"
+      sha256 "0b3139bae55c848d8b640bcb70396c9774c095c47ea4612c00ebfa2a63485fbd"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/lancher-dev/lancher/releases/download/v0.3.0/lancher-linux-amd64"
-      sha256 "db2fe3571b00f2f86428c054aef7a401ace34092359b638b31a345cda975af9f"
+      url "https://github.com/lancher-dev/lancher/releases/download/v0.3.1/lancher-linux-amd64"
+      sha256 "346bc5181a51cb0061163a49f744596389ba102346d1acf1ee614f395dbc92b2"
     end
 
     on_arm do
-      url "https://github.com/lancher-dev/lancher/releases/download/v0.3.0/lancher-linux-arm64"
-      sha256 "2d768b7952720d9bdad0276e3150611e7951d65e7f89f48f713752c409b6327b"
+      url "https://github.com/lancher-dev/lancher/releases/download/v0.3.1/lancher-linux-arm64"
+      sha256 "fb50a452295a08dfc54ed7cfe3d2d08a233308a94b6e1e123f5750838887b48a"
     end
   end
 
