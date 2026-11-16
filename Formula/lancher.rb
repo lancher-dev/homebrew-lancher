@@ -1,33 +1,32 @@
-# This file is a template — do not edit manually.
-# It is processed by envsubst in publish-homebrew.yml on every release,
-# and the result is written to Formula/lancher.rb.
+# Filled by envsubst in .github/workflows/publish-homebrew.yml and written to
+# Formula/lancher.rb in lancher-dev/homebrew-lancher.
 class Lancher < Formula
   desc "A minimal local project template manager"
   homepage "https://lancher.dev"
-  version "0.3.1"
+  version "0.4.0"
   license "MIT"
 
   on_macos do
     on_intel do
-      url "https://github.com/lancher-dev/lancher/releases/download/v0.3.1/lancher-darwin-amd64"
-      sha256 "78f7e3d9379477316906b80ce53e5d5170f900f1b9afd1e2c124589b904b2c40"
+      url "https://github.com/lancher-dev/lancher/releases/download/v0.4.0/lancher-darwin-amd64"
+      sha256 "e85b2f9e8ec049eb1640824d1c96aeaaa6eb41a44083243fffafeb7bfef2d8ed"
     end
 
     on_arm do
-      url "https://github.com/lancher-dev/lancher/releases/download/v0.3.1/lancher-darwin-arm64"
-      sha256 "0b3139bae55c848d8b640bcb70396c9774c095c47ea4612c00ebfa2a63485fbd"
+      url "https://github.com/lancher-dev/lancher/releases/download/v0.4.0/lancher-darwin-arm64"
+      sha256 "045737f1c53dd5c14f0e2763e2f31930ce5941a365077ef8d97ec30766ef3757"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/lancher-dev/lancher/releases/download/v0.3.1/lancher-linux-amd64"
-      sha256 "346bc5181a51cb0061163a49f744596389ba102346d1acf1ee614f395dbc92b2"
+      url "https://github.com/lancher-dev/lancher/releases/download/v0.4.0/lancher-linux-amd64"
+      sha256 "5bcc46317a264c38d39c2ed05a9c45aa4747f107aa3c4aa40257e6064ee1bb8d"
     end
 
     on_arm do
-      url "https://github.com/lancher-dev/lancher/releases/download/v0.3.1/lancher-linux-arm64"
-      sha256 "fb50a452295a08dfc54ed7cfe3d2d08a233308a94b6e1e123f5750838887b48a"
+      url "https://github.com/lancher-dev/lancher/releases/download/v0.4.0/lancher-linux-arm64"
+      sha256 "4bfbb0acd2d66cc32cc6cf3c4a6aaf4b70c9a28f9bfc54cb30f2af98b407eab7"
     end
   end
 
@@ -36,6 +35,8 @@ class Lancher < Formula
     bin.install "lancher-darwin-arm64" => "lancher" if OS.mac? && Hardware::CPU.arm?
     bin.install "lancher-linux-amd64"  => "lancher" if OS.linux? && Hardware::CPU.intel?
     bin.install "lancher-linux-arm64"  => "lancher" if OS.linux? && Hardware::CPU.arm?
+    (bin/"lancher").chmod 0755
+    generate_completions_from_executable(bin/"lancher", "completion")
   end
 
   test do
